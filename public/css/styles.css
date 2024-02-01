@@ -1,0 +1,173 @@
+body {
+    background-color: #00A9FF;
+  }
+  
+  .form-div {
+    display: flex;
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    height: 100vh;
+  }
+  
+  .form-div2 {
+    display: flex;
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    height: 100vh;
+    width: auto;
+    height: auto;
+    background-color: rgba(169, 169, 169, 0.459);
+    border-radius: 8px;
+  }
+  
+  .home-div2{
+  padding: 80px 40px;
+  }
+  
+  #div1-c-icon{
+    width: 120px;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto 0 auto ;
+  }
+  
+  .register-div2{
+    padding: 20px 20px;
+  }
+  
+  .login-form{
+    padding: 20px;
+  }
+  
+  .form-input{
+    width: 300px;
+  }
+  
+  #register-btn{
+    display: block;
+    margin: auto;
+  }
+  
+  #login-btn{
+    display: block;
+    margin: auto;
+  }
+  
+  .form {
+    display: block;
+  }
+  
+  .heading {
+    font-size: 35px;
+  }
+  
+  #svg-anous {
+    display: block;
+    margin: auto;
+  }
+  
+  #svg-google{
+    
+  }
+  
+  .button-div {
+    display: flex;
+    /* width: 170px; */
+    justify-content: center;
+  }
+  .google-button{
+    display: flex;
+  }
+  
+  .res-btn {
+    width: 100px;
+  }
+  
+  .login-btn {
+    margin-left: 20px;
+    width: 100px;
+  }
+  
+  
+  .form-res{
+    padding: 20px;
+  }
+  
+  .register-form-heading{
+  text-align: center;
+  }
+  
+  #res-heading{
+   font-size: 25px; 
+  }
+  #create-account{
+    font-size: 20px;
+  }
+  
+  .div1{
+   text-align: center;
+  }
+  
+  .div1-a{
+  margin-top: 30px;
+  }
+  
+  .div1-b {
+    margin: 35px  auto 0 auto;
+    background-color: #f0f0f0;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center-align the text within the div */
+  }
+  
+  #div1-a-para {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .div1-b p {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #3a17ffcc;
+    width: 80%; /* Set a specific width for the paragraph */
+    margin: 0 auto;/* Center the paragraph within the div */
+  }
+  
+  
+  #profile{
+    border-radius: 15px;
+    margin-bottom: 10px;
+  }
+  
+  #div1-a-para{
+    font-size: 25px;
+    font-weight: 600;
+  }
+  #mern{
+    color: orange;
+  }
+  #neeraj-saini{
+    color: yellow;
+  }
+  .res-google-div{
+  
+  }
+  
+  #google-icon{
+    display: flex;
+    align-items: center;
+    margin: auto 25px auto 35px ;
+    justify-content: center;
+  }
+  
+  #res-google-btn{
+    display: flex;
+    align-items: center;
+  }
