@@ -149,7 +149,7 @@ app.post("/register",(req,res)=>{
         }
         catch(error){
         console.error("Failed to make a request");
-        res.status(500);
+        res.send("this email already have account");
         }
     });
 });
