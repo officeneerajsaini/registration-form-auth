@@ -94,14 +94,14 @@ app.get("/login", (req, res) => {
     res.render("login.ejs");
 })
 
-// app.get("/main", (req, res) => {
-//     if (req.isAuthenticated()) {
-//         res.render("main.ejs");
-//     }
-//     else {
-//         res.redirect("/login");
-//     }
-// })
+app.get("/main", (req, res) => {
+    // if (req.isAuthenticated()) {
+        res.render("main.ejs");
+    // }
+    // else {
+        // res.redirect("/login");
+    // }
+})
 
 
 // app.post("/register", (req, res) => {
@@ -136,47 +136,54 @@ app.get("/login", (req, res) => {
 //     });
 // });
 
-app.post("/register",(req,res)=>{
-    bcrypt.hash(req.body.password,saltRounds,function(err,hash){
-        try{
-            const newUser = new User({
-             email:req.body.username,
-             password:hash
-            });
+app.post("/register", async (req, res) => {
+    const username = req.body.password;
+    const foundUser = await User.findOne({ username: username });
+    if (foundUser) {
+        bcrypt.hash(req.body.password, saltRounds, function (err, hash) {
+            try {
+                const newUser = new User({
+                    email: req.body.username,
+                    password: hash
+                });
 
-            newUser.save();
-            res.redirect("/login");
-        }
-        catch(error){
-        console.error("Failed to make a request");
+                newUser.save();
+                res.redirect("/login");
+            }
+            catch (error) {
+                console.error("Failed to make a request");
+                res.send(error.message);
+            }
+        });
+    }
+    else {
         res.send("this email already have account");
-        }
-    });
+    }
 });
 
 
-app.post("/login",async(req,res)=>{
-    try{
-     const username = req.body.username;
-     const password = req.body.password;
+app.post("/login", async (req, res) => {
+    try {
+        const username = req.body.username;
+        const password = req.body.password;
 
-     const foundUser = await User.findOne({username:username});
-     console.log(foundUser);
+        const foundUser = await User.findOne({ username: username });
+        console.log(foundUser);
 
-     if(foundUser){
-        bcrypt.compare(password,foundUser.password,function(err,result){
-            if(result===true){
-                res.render("main.ejs");
-            }
-        })
-     }
-     else {
-        res.send("User not found");
-     }
+        if (foundUser) {
+            bcrypt.compare(password, foundUser.password, function (err, result) {
+                if (result === true) {
+                    res.redirect("/main");
+                }
+            })
+        }
+        else {
+            res.send("User not found");
+        }
     }
-    catch(error){
-    console.log(error);
-    res.status(500).send("Internal Server Error");
+    catch (error) {
+        console.log(error);
+        res.status(500).send("Internal Server Error");
     }
 });
 
